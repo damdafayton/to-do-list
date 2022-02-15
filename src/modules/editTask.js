@@ -12,7 +12,7 @@ export function textAreaChangeHandler(e) {
   });
 
   // update local storage
-  const tasks = JSON.parse(localStorage.getItem('tasks'));
+  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
   Object.keys(tasks).forEach((key, i) => {
     if (i === index) {
       tasks[key].description = newText;

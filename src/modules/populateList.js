@@ -18,7 +18,7 @@ function updateLocalStorage(completeStatus, checkBox) {
     }
   });
   // find task within localstorage
-  const tasks = JSON.parse(localStorage.getItem('tasks'));
+  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
   tasks.forEach((task) => {
     console.log(index);
     if (task.index === index) {

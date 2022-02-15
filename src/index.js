@@ -6,7 +6,7 @@ import './modules/addTask';
 import { addEditHandlers } from './modules/editTask';
 
 // populate UI on page load
-const tasks = JSON.parse(localStorage.getItem('tasks'));
+const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 tasks.forEach((task) => populateList(task));
 addEditHandlers();
 
