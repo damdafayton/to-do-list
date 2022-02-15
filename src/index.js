@@ -38,5 +38,4 @@ function populateList(task) {
     li.classList.add('checked');
   }
 }
-
 tasks.forEach((task) => populateList(task));
