@@ -5,3 +5,4 @@ ignore/
 .parcel-cache/
 *.bat*
 .server.js
+.index.html
