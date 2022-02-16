@@ -2,7 +2,7 @@ import vertBtnSvg from '../icons/vert.svg';
 import { textAreaChangeHandler } from './editTask';
 import { checkBoxHandler, liCheckedToggle } from './checkBoxControl';
 
-// populate ul element on page load
+// populate ul element on page load or new task added
 export default function populateList(task) {
   console.log('populating');
   const li = document.createElement('li');
