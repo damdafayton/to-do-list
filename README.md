@@ -3,8 +3,8 @@
 
 # To Do List Project
 
-Web app to keep track of tasks with add / remove / edit functionality.
-Data is stored in LocalStorage
+- Web app to keep track of tasks with add / remove / edit functionality.
+- Data is stored in LocalStorage
 
 
 ## Built With
