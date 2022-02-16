@@ -4,18 +4,29 @@ div {
 
 input[type="checkbox"] {
   border-radius: 2px !important;
+  cursor: pointer;
+  width: 1.3em;
+  height: 1.2em;
 
   &:checked {
     background-color: unset !important;
     border: none !important;
     background-image: url("./icons/checked.svg") !important;
   }
+
+  &:focus {
+    box-shadow: none;
+    border-color: unset;
+  }
 }
 
 .checked {
-  background-color: #0c88e4 !important;
-  color: #cde5f6 !important;
-  text-decoration: line-through !important;
+  // background-color: #0c88e4 !important;
+  color: rgb(175 175 175) !important;
+
+  p {
+    text-decoration: line-through !important;
+  }
 }
 
 svg {
@@ -36,15 +47,39 @@ ul {
 #list-container {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
-  > input {
-    color: #949494;
-    width: 100%;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  > div {
+    input {
+      color: #949494;
+      width: 100%;
+      padding: 1rem 1rem;
+      border: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 
-    &::placeholder {
-      font-style: italic;
+      &::placeholder {
+        font-style: italic;
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    span {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: none;
+      background-color: transparent;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 0;
+      width: 40px;
+      height: 100%;
+      background-image: url("./icons/enter.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
     }
   }
 }
@@ -52,4 +87,25 @@ ul {
 #clear-div {
   background-color: #f6f6f6;
   color: #949494;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #eee;
+  }
+}
+
+.text-edit {
+  border: none;
+  padding: 1rem 1rem;
+  margin: 0;
+  text-decoration: none;
+  background-color: unset;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.editing {
+  background-color: #fdfdb7 !important;
 }
