@@ -30,16 +30,18 @@ export function addEditHandlers() {
   const pTags = document.querySelectorAll('#list-container p');
   console.log(pTags);
   pTags.forEach((tag) => {
-    tag.addEventListener('click', (e) => {
-      console.log(e.target);
-      e.target.classList.add('d-none');
-      e.target.nextElementSibling.classList.remove('d-none');
-      editedElements.target = e.target;
-      editedElements.sibling = e.target.nextElementSibling;
+    if (!tag.hasAttribute('listenerOnClick')) { // check if there ie already listener
+      tag.addEventListener('click', (e) => {
+        console.log(e.target);
+        e.target.classList.add('d-none');
+        e.target.nextElementSibling.classList.remove('d-none');
+        editedElements.target = e.target;
+        editedElements.sibling = e.target.nextElementSibling;
 
-      // add list item styling
-      e.target.parentElement.classList.add('editing');
-    });
+        // add list element edit styling
+        e.target.parentElement.classList.add('editing');
+      });
+    }
   });
 }
 

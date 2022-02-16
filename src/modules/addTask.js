@@ -1,4 +1,5 @@
 import populateList from './populateList';
+import { addEditHandlers } from './editTask';
 
 export default function addTaskHandler() {
   // new task - keyboard listener
@@ -11,11 +12,12 @@ export default function addTaskHandler() {
       localStorage.setItem('tasks', JSON.stringify(tasks));
       populateList(newTask);
       inputTask.value = '';
+      addEditHandlers(); // edit handler for new task
       console.log(tasks);
     }
   });
 
-  // new task click listener
+  // new task button listener
   const formAddBtn = document.querySelector('#list-container > div > span');
   formAddBtn.addEventListener('click', (e) => {
     const taskInput = e.target.previousElementSibling;
@@ -25,6 +27,7 @@ export default function addTaskHandler() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
     populateList(newTask);
     taskInput.value = '';
+    addEditHandlers(); // edit handler for new task
     console.log(tasks);
   });
 }
