@@ -14,10 +14,10 @@ function updateLocalStorage(completeStatus, checkBox) {
   // find task within localstorage
   const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
   tasks.forEach((task) => {
-    console.log(index);
+    // console.log(index);
     if (task.index === index) {
       task.completed = completeStatus;
-      console.log(task);
+      // console.log(task);
     }
   });
   // update localstorage

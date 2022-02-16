@@ -1,10 +1,10 @@
 import vertBtnSvg from '../icons/vert.svg';
-import { textAreaChangeHandler } from './editTask';
+import { textAreaChangeHandler, textAreaKeyStrokeHander } from './editTask';
 import { checkBoxHandler, liCheckedToggle } from './checkBoxControl';
 
 // populate ul element on page load or new task added
 export default function populateList(task) {
-  console.log('populating');
+  // console.log('populating');
   const li = document.createElement('li');
   li.classList.add('list-group-item', 'd-flex', 'align-items-center', 'py-0', 'pe-2');
 
@@ -17,6 +17,7 @@ export default function populateList(task) {
   textArea.classList.add('text-edit', 'd-none', 'w-100');
   textArea.value = task.description;
   textArea.addEventListener('change', textAreaChangeHandler);
+  textArea.addEventListener('keydown', textAreaKeyStrokeHander);
 
   const checkBox = document.createElement('input');
   checkBox.type = 'checkbox';
