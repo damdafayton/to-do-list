@@ -1,16 +1,15 @@
-![](images.jfif)
+![](ss.jpg)
 
 
-# Hello Project
+# To Do List Project
 
-> Title
-
-This project has no features.
+Web app to keep track of tasks with add / remove / edit functionality.
+Data is stored in LocalStorage
 
 
 ## Built With
 
-- HTML, CSS
+- HTML, SCSS, JS, Webpack
 
 
 ## Live Demo
@@ -20,8 +19,7 @@ This project has no features.
 
 ## Getting Started
 
-Download and click `index.html` if you really want to run this page.
-
+Download `\dist` folder and click `index.html`.
 
 
 ## Authors
@@ -42,11 +40,6 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-
-## Acknowledgments
-
-- Hat tip to all developers.
 
 
 ## 📝 License
