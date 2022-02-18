@@ -1,8 +1,7 @@
-let editedElements = {};
+const editedElements = {};
 
 export function addEditHandlers() {
   const pTags = document.querySelectorAll('#list-container p');
-  console.log(pTags);
   pTags.forEach((tag) => {
     if (!tag.hasAttribute('listenerOnClick')) { // check if there ie already listener
       tag.addEventListener('click', (e) => {
@@ -21,11 +20,11 @@ export function addEditHandlers() {
 
 // edit event outer click handler
 document.addEventListener('click', (e) => {
-  console.log(e.target === editedElements.sibling);
-  console.log(e.target === editedElements.target);
+  // console.log(e.target === editedElements.sibling);
+  // console.log(e.target === editedElements.target);
   // console.log(editedElements)
   if (e.target !== editedElements.target && e.target !== editedElements.sibling
-        && Object.keys(editedElements).length) {
+    && Object.keys(editedElements).length) {
     // remove list item styling
     editedElements.sibling.parentElement.classList.remove('editing');
 
@@ -37,7 +36,7 @@ document.addEventListener('click', (e) => {
 
 export function textAreaChangeHandler(e) {
   const newText = e.target.value;
-  console.log(newText);
+  // console.log(newText);
 
   // find index of textarea
   const listElements = document.querySelectorAll('#list-container li');

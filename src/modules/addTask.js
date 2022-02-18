@@ -3,31 +3,32 @@ import { addEditHandlers } from './editTask';
 
 export default function addTaskHandler() {
   // new task - keyboard listener
-  const inputTask = document.querySelector('#create-task-text');
-  inputTask.addEventListener('keydown', (e) => {
-    if (e.code === 'Enter') {
-      const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-      const newTask = { description: inputTask.value, completed: false, index: tasks.length };
-      tasks.push(newTask);
-      localStorage.setItem('tasks', JSON.stringify(tasks));
-      populateList(newTask);
-      inputTask.value = '';
-      addEditHandlers(); // edit handler for new task
-      console.log(tasks);
-    }
+  function handlerHelper(element) {
+    // update localstorage
+    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    const newTask = {
+      description: element.value,
+      completed: false,
+      index: tasks.length
+    };
+    tasks.push(newTask);
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+
+    //update ui
+    populateList(newTask);
+    element.value = '';
+
+    // edit handler for new task
+    addEditHandlers();
+  }
+
+  // input textarea listener
+  const element = document.querySelector('#create-task-text');
+  element.addEventListener('keydown', (e) => {
+    if (e.code === 'Enter') { handlerHelper(element) }
   });
 
   // new task button listener
   const formAddBtn = document.querySelector('#list-container > div > span');
-  formAddBtn.addEventListener('click', (e) => {
-    const taskInput = e.target.previousElementSibling;
-    const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    const newTask = { description: taskInput.value, completed: false, index: tasks.length };
-    tasks.push(newTask);
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-    populateList(newTask);
-    taskInput.value = '';
-    addEditHandlers(); // edit handler for new task
-    console.log(tasks);
-  });
+  formAddBtn.addEventListener('click', (e) => { handlerHelper(e.target.previousElementSibling) });
 }
