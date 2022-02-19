@@ -9,7 +9,8 @@
 
 ## Built With
 
-- HTML, SCSS, JS, Webpack
+- SCSS, JavaScript
+- Webpack, Jest
 
 
 ## Live Demo
