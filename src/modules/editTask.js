@@ -1,4 +1,4 @@
-const editedElements = {};
+let editedElements = {};
 
 export function addEditHandlers() {
   const pTags = document.querySelectorAll('#list-container p');

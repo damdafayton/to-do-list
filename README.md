@@ -19,7 +19,10 @@
 
 ## Getting Started
 
-Download `\dist` folder and click `index.html`.
+- To run: download `\dist` folder and click `index.html`.
+- To test :
+    - `npm install jest --global`
+    - `$ jest`
 
 
 ## Authors

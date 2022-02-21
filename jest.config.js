@@ -4,6 +4,9 @@
  */
 
 module.exports = {
+  moduleNameMapper: {
+    "^.+\\.svg$": "<rootDir>/__test__/svgTransform.js"
+  },
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
