@@ -6,12 +6,12 @@ export default function addTaskHandler(element) {
   const newTask = {
     description: element.value,
     completed: false,
-    index: tasks.length
+    index: tasks.length,
   };
   tasks.push(newTask);
   localStorage.setItem('tasks', JSON.stringify(tasks));
 
-  //update ui
+  // update ui
   populateList(newTask);
   element.value = '';
 }

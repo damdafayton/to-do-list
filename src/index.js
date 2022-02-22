@@ -27,17 +27,17 @@ window.addEventListener('DOMContentLoaded', () => {
   const element = document.querySelector('#create-task-text');
   element.addEventListener('keydown', (e) => {
     if (e.code === 'Enter') {
-      addTaskHandler(element)
+      addTaskHandler(element);
       // edit handler for new task
-      addEditHandlers();
+      editTaskListenersForStyle();
     }
   });
 
   // new task button listener to add task
   const formAddBtn = document.querySelector('#list-container > div > span');
   formAddBtn.addEventListener('click', (e) => {
-    addTaskHandler(e.target.previousElementSibling)
+    addTaskHandler(e.target.previousElementSibling);
     // edit handler for new task
-    addEditHandlers();
+    editTaskListenersForStyle();
   });
 });
