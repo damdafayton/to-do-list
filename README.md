@@ -15,12 +15,15 @@
 
 ## Live Demo
 
-[Live Demo Link](https://damdafayton.github.io/to-do-list)
+[Live Demo Link](https://damdafayton.github.io/to-do-list/dist)
 
 
 ## Getting Started
 
-Download `\dist` folder and click `index.html`.
+- To run: download `\dist` folder and click `index.html`.
+- To test :
+    - `npm install jest --global`
+    - `$ jest`
 
 
 ## Authors

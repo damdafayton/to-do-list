@@ -1,12 +1,11 @@
 let editedElements = {};
 
-export function addEditHandlers() {
+export function editTaskListenersForStyle() {
   const pTags = document.querySelectorAll('#list-container p');
-  console.log(pTags);
   pTags.forEach((tag) => {
     if (!tag.hasAttribute('listenerOnClick')) { // check if there ie already listener
       tag.addEventListener('click', (e) => {
-        console.log(e.target);
+        // console.log(e.target);
         e.target.classList.add('d-none');
         e.target.nextElementSibling.classList.remove('d-none');
         editedElements.target = e.target;
@@ -21,11 +20,11 @@ export function addEditHandlers() {
 
 // edit event outer click handler
 document.addEventListener('click', (e) => {
-  console.log(e.target === editedElements.sibling);
-  console.log(e.target === editedElements.target);
+  // console.log(e.target === editedElements.sibling);
+  // console.log(e.target === editedElements.target);
   // console.log(editedElements)
   if (e.target !== editedElements.target && e.target !== editedElements.sibling
-        && Object.keys(editedElements).length) {
+    && Object.keys(editedElements).length) {
     // remove list item styling
     editedElements.sibling.parentElement.classList.remove('editing');
 
@@ -37,7 +36,7 @@ document.addEventListener('click', (e) => {
 
 export function textAreaChangeHandler(e) {
   const newText = e.target.value;
-  console.log(newText);
+  // console.log(newText);
 
   // find index of textarea
   const listElements = document.querySelectorAll('#list-container li');
@@ -61,7 +60,7 @@ export function textAreaChangeHandler(e) {
   e.target.previousElementSibling.innerText = newText;
 }
 
-export function textAreaKeyStrokeHander(e) {
+export function textAreaEnterKeyHandler(e) {
   if (e.code === 'Enter') {
     e.target.blur(); // remove focus
     e.target.parentElement.classList.remove('editing'); // remove edit styling
