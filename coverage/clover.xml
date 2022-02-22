@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1645519184194" clover="3.2.0">
-  <project timestamp="1645519184195" name="All files">
+<coverage generated="1645545639082" clover="3.2.0">
+  <project timestamp="1645545639083" name="All files">
     <metrics statements="86" coveredstatements="82" conditionals="31" coveredconditionals="22" methods="19" coveredmethods="18" elements="136" coveredelements="122" complexity="0" loc="86" ncloc="86" packages="1" files="5" classes="5"/>
     <file name="addTask.js" path="D:\Damdafayton\microverse\module2\to-do-list\src\modules\addTask.js">
       <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
