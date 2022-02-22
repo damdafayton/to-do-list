@@ -24,7 +24,8 @@ function updateLocalStorage(completeStatus, checkBox) {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
-export function checkBoxHandler(checkBox) {
+export function checkBoxHandler(e) {
+  const checkBox = e.target
   liCheckedToggle(checkBox); // update style
   if (checkBox.checked) {
     updateLocalStorage(true, checkBox);

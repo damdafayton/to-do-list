@@ -1,11 +1,11 @@
 let editedElements = {};
 
-export function addEditHandlers() {
+export function editTaskListenersForStyle() {
   const pTags = document.querySelectorAll('#list-container p');
   pTags.forEach((tag) => {
     if (!tag.hasAttribute('listenerOnClick')) { // check if there ie already listener
       tag.addEventListener('click', (e) => {
-        console.log(e.target);
+        // console.log(e.target);
         e.target.classList.add('d-none');
         e.target.nextElementSibling.classList.remove('d-none');
         editedElements.target = e.target;
@@ -60,7 +60,7 @@ export function textAreaChangeHandler(e) {
   e.target.previousElementSibling.innerText = newText;
 }
 
-export function textAreaKeyStrokeHander(e) {
+export function textAreaEnterKeyHandler(e) {
   if (e.code === 'Enter') {
     e.target.blur(); // remove focus
     e.target.parentElement.classList.remove('editing'); // remove edit styling

@@ -3,13 +3,13 @@ import './style.scss';
 import populateList from './modules/populateList';
 import removeHandler from './modules/removeTask';
 import addTaskHandler from './modules/addTask';
-import { addEditHandlers } from './modules/editTask';
+import { editTaskListenersForStyle } from './modules/editTask';
 
 // Populate UI on page load
 const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 tasks.forEach((task) => populateList(task));
 
-addEditHandlers();
+editTaskListenersForStyle();
 
 const removeSelectedDiv = document.querySelector('#remove-selected');
 removeSelectedDiv.addEventListener('click', removeHandler);
@@ -21,6 +21,7 @@ window.addEventListener('load', () => {
   list.classList.remove('d-none');
 });
 
+// Add create and edit listeners
 window.addEventListener('DOMContentLoaded', () => {
   // input textarea listener to add task
   const element = document.querySelector('#create-task-text');
