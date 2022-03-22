@@ -17,7 +17,6 @@ removeSelectedDiv.addEventListener('click', removeHandler);
 // Prevent bad ui during load
 window.addEventListener('load', () => {
   const list = document.querySelector('#list-container');
-  console.log('dom loaded');
   list.classList.remove('d-none');
 });
 
